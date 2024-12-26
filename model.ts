@@ -51,6 +51,7 @@ export interface Asteroid {
   designation: string;
   estimatedDiameter: string;
   firstObservationYear: string;
+  id: string;
   isLiked: boolean;
   isPotentiallyHazardous: boolean;
   name: string;

@@ -76,6 +76,7 @@ export const asteroidsAdaptor = (
         firstObservationYear: moment(
           backendAsteroid.orbital_data.first_observation_date
         ).format("YYYY"),
+        id: backendAsteroid.id,
         isLiked: false,
         isPotentiallyHazardous:
           backendAsteroid.is_potentially_hazardous_asteroid,
