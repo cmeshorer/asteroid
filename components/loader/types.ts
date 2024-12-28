@@ -1,0 +1,3 @@
+import { ActivityIndicatorProps } from "react-native";
+
+export type LoaderProps = Pick<ActivityIndicatorProps, "size" | "style">;
