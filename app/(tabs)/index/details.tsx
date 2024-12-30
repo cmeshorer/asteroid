@@ -4,13 +4,13 @@ import Page from "@/components/page";
 import { useAppSelector } from "@/hooks";
 import { Asteroid } from "@/model";
 
-const FavoritesDetailsScreen = () => {
+const HomeDetailsScreen = () => {
   const id = useLocalSearchParams().id;
-  const likedAsteroids = useAppSelector(
-    (state) => state.asteroids.likedAsteroids
+  const foundAsteroids = useAppSelector(
+    (state) => state.asteroids.foundAsteroids
   );
-  const asteroid = likedAsteroids.find(
-    (likedAsteroid) => likedAsteroid.id === id
+  const asteroid = foundAsteroids.find(
+    (foundAsteroid) => foundAsteroid.id === id
   ) as Asteroid;
 
   return (
@@ -20,4 +20,4 @@ const FavoritesDetailsScreen = () => {
   );
 };
 
-export default FavoritesDetailsScreen;
+export default HomeDetailsScreen;
