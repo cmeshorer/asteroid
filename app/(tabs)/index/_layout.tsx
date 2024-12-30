@@ -7,7 +7,7 @@ const StackLayout = () => {
       <Stack.Screen
         name="index"
         options={{
-          headerTitle: "Favorites",
+          headerTitle: "Home",
           headerTintColor: theme.complementary.steel as string,
           headerStyle: { backgroundColor: theme.secondary as string },
         }}

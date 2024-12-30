@@ -1,16 +1,28 @@
 import { Tabs } from "expo-router";
 import React from "react";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import Entypo from "@expo/vector-icons/Entypo";
+import { theme } from "@/theme";
+import { sizes } from "@/constants";
 
 const TabLayout = () => {
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: "blue", headerShown: false }}>
+    <Tabs
+      screenOptions={{
+        tabBarActiveTintColor: theme.complementary.steel as string,
+        tabBarStyle: { backgroundColor: theme.secondary, borderTopWidth: 0 },
+        headerShown: false,
+      }}
+    >
       <Tabs.Screen
-        name="home"
+        name="index"
         options={{
           title: "Home",
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="home" color={color} />
+            <Entypo
+              name="home"
+              color={color}
+              size={sizes.elements.icon.medium}
+            />
           ),
         }}
       />
@@ -19,7 +31,11 @@ const TabLayout = () => {
         options={{
           title: "Favorites",
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="heart" color={color} />
+            <Entypo
+              name="heart"
+              color={color}
+              size={sizes.elements.icon.medium}
+            />
           ),
         }}
       />
