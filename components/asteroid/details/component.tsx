@@ -24,19 +24,19 @@ const AsteroidDetails = ({ asteroid }: AsteroidDetailsProps) => {
           </View>
           <View style={styles.infoSubContainer}>
             <Entypo
-              name="back-in-time"
-              size={sizes.elements.icon.large}
-              color={theme.grey.dark}
-            />
-            <Text style={styles.info}>{asteroid.firstObservationYear}</Text>
-          </View>
-          <View style={styles.infoSubContainer}>
-            <Entypo
               name="light-up"
               size={sizes.elements.icon.large}
               color={theme.grey.dark}
             />
             <Text style={styles.info}>{asteroid.absoluteMagnitude}</Text>
+          </View>
+          <View style={styles.infoSubContainer}>
+            <Entypo
+              name="back-in-time"
+              size={sizes.elements.icon.large}
+              color={theme.grey.dark}
+            />
+            <Text style={styles.info}>{asteroid.firstObservationYear}</Text>
           </View>
         </View>
       </View>
