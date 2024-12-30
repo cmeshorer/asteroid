@@ -55,7 +55,7 @@ export interface Asteroid {
   isLiked: boolean;
   isPotentiallyHazardous: boolean;
   name: string;
-  nameLimited: string;
+  nameLimited: string | undefined;
   nextCloseApproach?: {
     date: string;
     missDistance: string;

@@ -10,7 +10,7 @@ export interface NearEarthObject {
   id: string;
   neo_reference_id: string;
   name: string;
-  name_limited: string;
+  name_limited?: string;
   designation: string;
   nasa_jpl_url: string;
   absolute_magnitude_h: number;
@@ -52,6 +52,9 @@ export interface BackendAsteroidsData {
   };
   near_earth_objects: NearEarthObject[];
 }
+
+export const pageSize = 10;
+const apiKey = "srmvz9uuhI8OAGIBOdtHKUmeKBg5w6mu6I1JIH2I";
 
 export const asteroidsAdaptor = (
   backendAsteroidsData: BackendAsteroidsData
@@ -101,13 +104,10 @@ export const asteroidsAdaptor = (
   return adaptedAsteroids as Asteroids;
 };
 
-const apiKey = "DEMO_KEY";
-
 export const service = {
   asteroids: {
     browse: async (page: number) => {
-      const size = 20;
-      const api = `https://api.nasa.gov/neo/rest/v1/neo/browse?page=${page}&size=${size}&api_key=${apiKey}`;
+      const api = `https://api.nasa.gov/neo/rest/v1/neo/browse?page=${page}&size=${pageSize}&api_key=${apiKey}`;
       const response = await axios.get(api);
       const backendAsteroidsData = response.data as BackendAsteroidsData;
       const asteroids = asteroidsAdaptor(backendAsteroidsData);
