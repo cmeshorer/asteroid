@@ -8,16 +8,16 @@ const StackLayout = () => {
         name="index"
         options={{
           headerTitle: "Home",
-          headerTintColor: theme.complementary.steel as string,
-          headerStyle: { backgroundColor: theme.secondary as string },
+          headerTintColor: theme.complementary.steel,
+          headerStyle: { backgroundColor: theme.secondary },
         }}
       />
       <Stack.Screen
         name="details"
         options={{
           headerTitle: "Asteroid",
-          headerTintColor: theme.complementary.steel as string,
-          headerStyle: { backgroundColor: theme.secondary as string },
+          headerTintColor: theme.complementary.steel,
+          headerStyle: { backgroundColor: theme.secondary },
           headerBackButtonDisplayMode: "minimal",
         }}
       />

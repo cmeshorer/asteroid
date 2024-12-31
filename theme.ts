@@ -1,25 +1,3 @@
-import { ColorValue } from "react-native";
-
-interface Theme {
-  primary: ColorValue;
-  secondary: ColorValue;
-  tertiary: ColorValue;
-  complementary: {
-    bazaar: ColorValue;
-    brick: ColorValue;
-    cinnabar: ColorValue;
-    pacific: ColorValue;
-    steel: ColorValue;
-    tangerine: ColorValue;
-  };
-  grey: {
-    black: ColorValue;
-    dark: ColorValue;
-    regular: ColorValue;
-    white: ColorValue;
-  };
-}
-
 export const theme = {
   primary: "#3a506b",
   secondary: "#1c2541",
@@ -38,4 +16,4 @@ export const theme = {
     regular: "#8e9191",
     white: "#ffffff",
   },
-} as Theme;
+};
