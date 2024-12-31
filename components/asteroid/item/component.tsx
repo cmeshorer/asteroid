@@ -3,10 +3,10 @@ import { View, TouchableOpacity } from "react-native";
 import { router } from "expo-router";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import Entypo from "@expo/vector-icons/Entypo";
-import { theme } from "@/theme";
 import LikeButton from "@/components/buttons/like";
 import Text from "@/components/text";
-import { sizes } from "@/constants";
+import { theme } from "@/constants/theme";
+import { sizes } from "@/constants/ui";
 import styles from "./styles";
 import { AsteroidProps } from "./types";
 

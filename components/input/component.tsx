@@ -1,6 +1,6 @@
 import { TextInput } from "react-native";
-import { values } from "@/constants";
-import { theme } from "@/theme";
+import { theme } from "@/constants/theme";
+import { values } from "@/constants/ui";
 import styles from "./styles";
 import { InputProps } from "./types";
 

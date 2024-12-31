@@ -1,4 +1,4 @@
-import { Asteroid } from "@/model";
+import { Asteroid } from "@/models/asteroids";
 
 export interface LikeButtonProps {
   asteroidId: Asteroid["id"];

@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import asteroidsReducer from "@/asteroidsSlice";
+import asteroidsReducer from "./asteroidsSlice";
 
 export const store = configureStore({
   reducer: {

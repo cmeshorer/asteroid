@@ -1,5 +1,5 @@
-import { sizes } from "@/constants";
 import { StyleSheet } from "react-native";
+import { sizes } from "@/constants/ui";
 
 const styles = StyleSheet.create({
   contentContainer: {

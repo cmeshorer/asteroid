@@ -1,16 +1,17 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
-import { populateAsteroids } from "@/asteroidsSlice";
-import { useAppDispatch, useAppSelector } from "@/hooks";
-import { service } from "@/service";
 import Page from "@/components/page";
 import Input from "@/components/input";
 import Text from "@/components/text";
-import { sizes } from "@/constants";
-import { theme } from "@/theme";
+import { theme } from "@/constants/theme";
+import { sizes } from "@/constants/ui";
 import AsteroidList from "@/components/asteroid/list";
 import Loader from "@/components/loader";
 import EmptyAnimation from "@/components/animations/empty";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
+import { useAppSelector } from "@/hooks/useAppSelector";
+import { asteroidsService } from "@/services/asteroids";
+import { populateAsteroids } from "@/state/asteroidsSlice";
 
 const HomeScreen = () => {
   const [page, setPage] = React.useState(0);
@@ -40,7 +41,7 @@ const HomeScreen = () => {
   const getAsteroids = async () => {
     try {
       setIsFetching(true);
-      const asteroids = await service.asteroids.browse(page);
+      const asteroids = await asteroidsService.browse(page);
       dispatch(populateAsteroids(asteroids));
       setPage(page + 1);
       if (asteroids.length === 0) setIsEndReached(true);

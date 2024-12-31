@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
-import { theme } from "@/theme";
-import { sizes, styles as constantStyles } from "@/constants";
+import { theme } from "@/constants/theme";
+import { sizes, styles as constantStyles } from "@/constants/ui";
 
 const styles = StyleSheet.create({
   asteroidContainer: {

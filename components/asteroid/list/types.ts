@@ -1,6 +1,6 @@
 import { Route } from "expo-router";
 import { ComponentType } from "react";
-import { Asteroid } from "@/model";
+import { Asteroid } from "@/models/asteroids";
 
 export interface AsteroidListProps {
   asteroids: Asteroid[];

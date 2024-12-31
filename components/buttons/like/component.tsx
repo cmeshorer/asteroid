@@ -5,11 +5,11 @@ import Animated, {
   useSharedValue,
   withSpring,
 } from "react-native-reanimated";
-import { toggleAsteroidLike } from "@/asteroidsSlice";
-import { animations, sizes } from "@/constants";
-import { useAppDispatch } from "@/hooks";
 import Entypo from "@expo/vector-icons/Entypo";
-import { theme } from "@/theme";
+import { useAppDispatch } from "@/hooks/useAppDispatch";
+import { toggleAsteroidLike } from "@/state/asteroidsSlice";
+import { theme } from "@/constants/theme";
+import { animations, sizes } from "@/constants/ui";
 import { LikeButtonProps } from "./types";
 
 const LikeButton = ({ asteroidId, isLiked }: LikeButtonProps) => {

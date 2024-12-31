@@ -1,8 +1,8 @@
 import { useLocalSearchParams } from "expo-router";
 import AsteroidDetails from "@/components/asteroid/details";
 import Page from "@/components/page";
-import { useAppSelector } from "@/hooks";
-import { Asteroid } from "@/model";
+import { useAppSelector } from "@/hooks/useAppSelector";
+import { Asteroid } from "@/models/asteroids";
 
 const FavoritesDetailsScreen = () => {
   const id = useLocalSearchParams().id;

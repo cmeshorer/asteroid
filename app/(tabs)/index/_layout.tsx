@@ -1,5 +1,5 @@
-import { theme } from "@/theme";
 import { Stack } from "expo-router";
+import { theme } from "@/constants/theme";
 
 const StackLayout = () => {
   return (

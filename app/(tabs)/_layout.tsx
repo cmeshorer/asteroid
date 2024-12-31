@@ -1,8 +1,8 @@
 import { Tabs } from "expo-router";
 import React from "react";
 import Entypo from "@expo/vector-icons/Entypo";
-import { theme } from "@/theme";
-import { sizes } from "@/constants";
+import { theme } from "@/constants/theme";
+import { sizes } from "@/constants/ui";
 
 const TabLayout = () => {
   return (

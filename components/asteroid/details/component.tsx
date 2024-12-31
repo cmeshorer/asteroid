@@ -2,9 +2,9 @@ import React from "react";
 import { View } from "react-native";
 import Entypo from "@expo/vector-icons/Entypo";
 import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
-import { theme } from "@/theme";
 import Text from "@/components/text";
-import { sizes } from "@/constants";
+import { theme } from "@/constants/theme";
+import { sizes } from "@/constants/ui";
 import { AsteroidDetailsProps } from "./types";
 import styles from "./styles";
 

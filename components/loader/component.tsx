@@ -1,6 +1,6 @@
 import React from "react";
 import { ActivityIndicator } from "react-native";
-import { theme } from "../../theme";
+import { theme } from "@/constants/theme";
 import { LoaderProps } from "./types";
 
 const Loader = ({ style }: LoaderProps) => {

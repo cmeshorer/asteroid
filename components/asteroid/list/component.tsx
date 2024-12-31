@@ -1,8 +1,8 @@
 import React, { memo, useCallback } from "react";
 import { FlatList, View } from "react-native";
 import Asteroid from "@/components/asteroid/item";
-import { Asteroid as AsteroidItem } from "@/model";
-import { pageSize } from "@/service";
+import { pageSize } from "@/constants/asteroids";
+import { Asteroid as AsteroidItem } from "@/models/asteroids";
 import styles from "./styles";
 import { AsteroidListProps } from "./types";
 

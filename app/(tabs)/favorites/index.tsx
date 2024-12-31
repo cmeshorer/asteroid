@@ -1,9 +1,9 @@
 import React from "react";
 import { StyleSheet } from "react-native";
-import { useAppSelector } from "@/hooks";
 import Page from "@/components/page";
 import AsteroidList from "@/components/asteroid/list";
 import EmptyAnimation from "@/components/animations/empty";
+import { useAppSelector } from "@/hooks/useAppSelector";
 
 const FavoritesScreen = () => {
   const spaceBookSource = require("../../../assets/animations/space-book.json");

@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Asteroid } from "@/models/asteroids";
 import { RootState } from "./store";
-import { Asteroid } from "./model";
 
-export interface AsteroidsState {
+interface AsteroidsState {
   foundAsteroids: Asteroid[];
   likedAsteroids: Asteroid[];
 }
