@@ -1,6 +1,6 @@
 import axios from "axios";
 import moment from "moment";
-import { Asteroids, CloseApproach, Orbital } from "./model";
+import { Asteroid, CloseApproach, Orbital } from "./model";
 import { getAverage, shortenValue } from "./tools/math";
 
 export interface NearEarthObject {
@@ -101,7 +101,7 @@ export const asteroidsAdaptor = (
       };
     }
   );
-  return adaptedAsteroids as Asteroids;
+  return adaptedAsteroids as Asteroid[];
 };
 
 export const service = {

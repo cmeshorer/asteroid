@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "./store";
-import { Asteroid, Asteroids } from "./model";
+import { Asteroid } from "./model";
 
 export interface AsteroidsState {
-  foundAsteroids: Asteroids;
-  likedAsteroids: Asteroids;
+  foundAsteroids: Asteroid[];
+  likedAsteroids: Asteroid[];
 }
 
 const initialState: AsteroidsState = {
@@ -16,7 +16,7 @@ export const asteroidsSlice = createSlice({
   name: "asteroids",
   initialState,
   reducers: {
-    populateAsteroids: (state, action: PayloadAction<Asteroids>) => {
+    populateAsteroids: (state, action: PayloadAction<Asteroid[]>) => {
       state.foundAsteroids.push(...action.payload);
     },
     toggleAsteroidLike: (state, action: PayloadAction<string>) => {

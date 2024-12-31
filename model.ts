@@ -62,5 +62,3 @@ export interface Asteroid {
     relativeVelocity: string;
   };
 }
-
-export type Asteroids = Asteroid[];
