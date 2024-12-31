@@ -8,7 +8,7 @@ import {
 } from "@/models/asteroids";
 import { getAverage, shortenValue } from "@/tools/math";
 
-const apiKey = "srmvz9uuhI8OAGIBOdtHKUmeKBg5w6mu6I1JIH2I";
+const apiKey = process.env.EXPO_PUBLIC_API_KEY;
 
 const getEstimatedDiameter = (nearEarthObject: NearEarthObject) => {
   return `${shortenValue(
