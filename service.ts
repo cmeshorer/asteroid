@@ -56,22 +56,24 @@ export interface BackendAsteroidsData {
 export const pageSize = 10;
 const apiKey = "srmvz9uuhI8OAGIBOdtHKUmeKBg5w6mu6I1JIH2I";
 
-export const asteroidsAdaptor = (
-  backendAsteroidsData: BackendAsteroidsData
-) => {
+const getEstimatedDiameter = (nearEarthObject: NearEarthObject) => {
+  return `${shortenValue(
+    getAverage([
+      nearEarthObject.estimated_diameter.kilometers.estimated_diameter_min,
+      nearEarthObject.estimated_diameter.kilometers.estimated_diameter_max,
+    ])
+  )} km`;
+};
+const getNextCloseApproach = (nearEarthObject: NearEarthObject) => {
+  return nearEarthObject.close_approach_data.filter((closeAproach) =>
+    moment(closeAproach.close_approach_date).isAfter()
+  )[0];
+};
+const asteroidsAdaptor = (backendAsteroidsData: BackendAsteroidsData) => {
   const adaptedAsteroids = backendAsteroidsData.near_earth_objects.map(
     (backendAsteroid) => {
-      const estimatedDiameter = `${shortenValue(
-        getAverage([
-          backendAsteroid.estimated_diameter.kilometers.estimated_diameter_min,
-          backendAsteroid.estimated_diameter.kilometers.estimated_diameter_max,
-        ])
-      )} km`;
-      const backendNextCloseApproach =
-        backendAsteroid.close_approach_data.filter((closeAproach) =>
-          moment(closeAproach.close_approach_date).isAfter()
-        )[0];
-
+      const estimatedDiameter = getEstimatedDiameter(backendAsteroid);
+      const nextCloseApproach = getNextCloseApproach(backendAsteroid);
       return {
         absoluteMagnitude: backendAsteroid.absolute_magnitude_h.toString(),
         designation: backendAsteroid.designation,
@@ -85,16 +87,16 @@ export const asteroidsAdaptor = (
           backendAsteroid.is_potentially_hazardous_asteroid,
         name: backendAsteroid.name,
         nameLimited: backendAsteroid.name_limited,
-        nextCloseApproach: backendNextCloseApproach
+        nextCloseApproach: nextCloseApproach
           ? {
-              date: moment(backendNextCloseApproach.close_approach_date).format(
+              date: moment(nextCloseApproach.close_approach_date).format(
                 "DD/MM/YYYY"
               ),
               missDistance: `${shortenValue(
-                backendNextCloseApproach.miss_distance.kilometers
+                nextCloseApproach.miss_distance.kilometers
               )} km`,
               relativeVelocity: `${shortenValue(
-                backendNextCloseApproach.relative_velocity.kilometers_per_hour
+                nextCloseApproach.relative_velocity.kilometers_per_hour
               )} km/h`,
             }
           : undefined,
