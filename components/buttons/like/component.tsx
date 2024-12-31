@@ -6,7 +6,7 @@ import Animated, {
   withSpring,
 } from "react-native-reanimated";
 import { toggleAsteroidLike } from "@/asteroidsSlice";
-import { sizes } from "@/constants";
+import { animations, sizes } from "@/constants";
 import { useAppDispatch } from "@/hooks";
 import Entypo from "@expo/vector-icons/Entypo";
 import { theme } from "@/theme";
@@ -20,16 +20,9 @@ const LikeButton = ({ asteroidId, isLiked }: LikeButtonProps) => {
   }));
 
   const onLike = () => {
-    scale.value = withSpring(
-      1.5,
-      {
-        damping: 3,
-        stiffness: 150,
-      },
-      () => {
-        scale.value = withSpring(1);
-      }
-    );
+    scale.value = withSpring(1.5, animations.spring, () => {
+      scale.value = withSpring(1);
+    });
     dispatch(toggleAsteroidLike(asteroidId));
   };
 

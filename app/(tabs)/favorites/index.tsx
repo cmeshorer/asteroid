@@ -3,21 +3,18 @@ import { StyleSheet } from "react-native";
 import { useAppSelector } from "@/hooks";
 import Page from "@/components/page";
 import AsteroidList from "@/components/asteroid/list";
-import Animation from "@/components/animation";
+import EmptyAnimation from "@/components/animations/empty";
 
 const FavoritesScreen = () => {
-  const styles = StyleSheet.create({
-    page: { paddingBottom: 0 },
-  });
+  const spaceBookSource = require("../../../assets/animations/space-book.json");
   const likedAsteroids = useAppSelector(
     (state) => state.asteroids.likedAsteroids
   );
+
+  const styles = StyleSheet.create({ page: { paddingBottom: 0 } });
+
   const EmptyComponent = () => {
-    return (
-      <Animation
-        source={require("../../../assets/animations/space-book.json")}
-      />
-    );
+    return <EmptyAnimation source={spaceBookSource} />;
   };
 
   return (

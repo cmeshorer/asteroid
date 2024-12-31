@@ -10,7 +10,7 @@ import { sizes } from "@/constants";
 import { theme } from "@/theme";
 import AsteroidList from "@/components/asteroid/list";
 import Loader from "@/components/loader";
-import Animation from "@/components/animation";
+import EmptyAnimation from "@/components/animations/empty";
 
 const HomeScreen = () => {
   const [page, setPage] = React.useState(0);
@@ -19,7 +19,7 @@ const HomeScreen = () => {
   const [error, setError] = React.useState(false);
   const [search, setSearch] = React.useState("");
 
-  const source = require("../../../assets/animations/space-ship.json");
+  const spaceShipSource = require("../../../assets/animations/space-ship.json");
   const dispatch = useAppDispatch();
   const foundAsteroids = useAppSelector(
     (state) => state.asteroids.foundAsteroids
@@ -80,7 +80,7 @@ const HomeScreen = () => {
     return foundAsteroids.length === 0 ? (
       <Loader />
     ) : (
-      <Animation source={source} />
+      <EmptyAnimation source={spaceShipSource} />
     );
   };
   const FooterComponent = () =>
@@ -94,7 +94,7 @@ const HomeScreen = () => {
     <Page style={styles.page}>
       {error ? (
         <View style={styles.errorContainer}>
-          <Animation source={source} />
+          <EmptyAnimation source={spaceShipSource} />
           <Text style={styles.error}>
             An error has occured. Please try again later.
           </Text>

@@ -1,6 +1,13 @@
 import { StyleSheet } from "react-native";
 import { theme } from "./theme";
 
+export const animations = {
+  spring: {
+    damping: 3,
+    stiffness: 150,
+  },
+};
+
 export const sizes = {
   elements: {
     animation: 300,
@@ -30,14 +37,6 @@ export const sizes = {
   },
 };
 
-export const values = {
-  opacity: {
-    transparent: 0,
-    half: 0.5,
-    opaque: 1,
-  },
-};
-
 export const styles = StyleSheet.create({
   shadows: {
     shadowColor: theme.grey.dark,
@@ -47,3 +46,11 @@ export const styles = StyleSheet.create({
     elevation: 4,
   },
 });
+
+export const values = {
+  opacity: {
+    transparent: 0,
+    half: 0.5,
+    opaque: 1,
+  },
+};
